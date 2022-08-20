@@ -1,3 +1,5 @@
+apply(from = "../docker-build.gradle")
+
 dependencies {
     implementation(project(":commons:model"))
     implementation(project(":commons:persistence-database"))
