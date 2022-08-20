@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<configuration>
+    <springProperty scope="context" name="loggingFilePath" source="logging.file.path" defaultValue="./logs"/>
+
+    <include resource="org/springframework/boot/logging/logback/defaults.xml"/>
+    <include resource="org/springframework/boot/logging/logback/console-appender.xml"/>
+    <include resource="logback/application-file-appender.xml"/> <!-- Imported from :commons:logback-appender -->
+    <include resource="logback/json-file-appender.xml"/> <!-- Imported from :commons:logback-appender -->
+    <include resource="logback/sentry-appender.xml"/> <!-- Imported from :commons:logback-appender -->
+
+    <logger name="kr.dataportal.application.aspect.ApplicationLogTraceAspect" level="INFO" additivity="false">
+        <appender-ref ref="JSON_FILE"/>
+    </logger>
+
+    <!-- default -->
+    <root level="INFO">
+        <appender-ref ref="CONSOLE"/>
+        <appender-ref ref="APPLICATION_FILE"/>
+        <!--<appender-ref ref="SENTRY"/>-->
+    </root>
+</configuration>

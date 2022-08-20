@@ -1,0 +1,12 @@
+spring:
+  jpa:
+    open-in-view: false
+---
+spring:
+  config:
+    activate:
+      on-profile: test
+  jpa:
+    database: h2
+    database-platform: org.hibernate.dialect.H2Dialect
+    show-sql: true
