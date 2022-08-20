@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+    TBU; appender for Sentry
+-->
+<included>
+    <!-- Configure the Sentry appender, overriding the logging threshold to the WARN level -->
+</included>

@@ -1,0 +1,18 @@
+apply plugin: "com.palantir.docker"
+
+def tagName = "latest"
+if (System.getenv("DOCKER_TAG")) {
+    tagName = System.getenv("DOCKER_TAG")
+}
+
+def imageName = project.name
+if (System.getenv("DOCKER_IMG_NAME")) {
+    imageName = System.getenv("DOCKER_IMG_NAME")
+}
+
+docker {
+    dependsOn build as Task
+    name "$imageName:$tagName"
+    files bootJar.archiveFile
+    buildArgs(["JAR_FILE": "${bootJar.archiveFileName.get()}"])
+}
