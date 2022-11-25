@@ -8,5 +8,5 @@ COPY --chown=application:application ${JAR_FILE} application.jar
 ENV TZ=Asia/Seoul
 EXPOSE 8080
 
-ENTRYPOINT exec java $JAVA_POTS -jar ./application.jar
+ENTRYPOINT exec java $JAVA_OPTS -jar ./application.jar
 CMD []
